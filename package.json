@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "local": "nodemon dev_index.js",
-    "start": "node index.js"
+    "local": "cross-env NODE_ENV=development nodemon dev_index.js",
+    "start": "cross-env NODE_ENV=production node index.js"
   },
   "repository": {
     "type": "git",
@@ -28,6 +28,7 @@
     "nodemon": "^2.0.4"
   },
   "devDependencies": {
+    "cross-env": "^7.0.2",
     "dotenv": "^8.2.0",
     "sqlite3": "^4.2.0"
   }
