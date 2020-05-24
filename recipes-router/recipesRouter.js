@@ -1,5 +1,6 @@
 const router = require("express").Router()
 const db = require("./recipesDataModel")
+const restrict = require("../restrict-middleware/restrict")
 
 
 router.get("/", (req, res) => {
@@ -21,7 +22,7 @@ router.get("/:id", (req, res) => {
     })
 })
 
-router.post("/", (req, res) => {
+router.post("/", restrict(), (req, res) => {
     if(!req.body.title || !req.body.instructions || !req.body.ingredients || !req.body.photo) {
         return res.status(400).json({ errorMessage: "Please provide title, instructions, ingredients and photo for the post." })
     }
@@ -35,7 +36,7 @@ router.post("/", (req, res) => {
     })
 })
 
-router.put("/:id", (req, res) => {
+router.put("/:id", restrict(), (req, res) => {
     if(!req.body.title || !req.body.instructions || !req.body.ingredients || !req.body.photo) {
         return res.status(400).json({ errorMessage: "Please provide title, instructions, ingredients and photo for the post." })
     }
@@ -49,7 +50,7 @@ router.put("/:id", (req, res) => {
     })
 })
 
-router.delete("/:id", (req, res) => {
+router.delete("/:id", restrict(), (req, res) => {
     db.deleteRecipe(req.params.id)
     .then(recipe => {
         res.status(200).json({ message: `Recipe is deleted!`})
