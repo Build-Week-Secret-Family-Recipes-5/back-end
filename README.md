@@ -34,7 +34,7 @@ _http method_: **[POST]**
 
 #### Response
 
-##### 201 (created)
+##### 201 (Created)
 
 ###### Example Response
 
@@ -56,3 +56,65 @@ _http method_: **[POST]**
 ```
 
 **/----------------------------------------/**
+
+### **Login a User**
+
+_method url_: `/api/auth/login`
+
+_http method_: **[POST]**
+
+#### Headers
+
+| name           | type   | required | description              |
+| -------------- | ------ | -------- | ------------------------ |
+| `Content-Type` | String | Yes      | Must be application/json |
+
+#### Body
+
+| name       | type   | required | description             |
+| ---------- | ------ | -------- | ----------------------- |
+| `username` | String | Yes      | must be registered user |
+| `password` | String | Yes      |                         |
+
+#### Example
+
+```
+{
+	"username": "samim2020",
+	"password": "samim2020"
+}
+```
+
+#### Response
+
+##### 200 (Ok)
+
+> no issues logging in
+
+###### Example response
+
+```
+{
+  "message": "You logged in successfuly!"
+}
+```
+
+##### 401 (UnAuthorized)
+
+```
+  {
+    message: "Invalid credentials"
+  }
+```
+
+##### 500 (Bad Request)
+
+```
+  {
+    message: "Error logging in",
+    error: {
+      "errno": 1,
+      "code": "SOME_ERROR"
+    }
+  }
+```
