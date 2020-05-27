@@ -1,5 +1,7 @@
 ### Secret Family Recipes ###
 
+Backend Project for Lambda School's Build Week, deployed Link is https://back-end-build-weeks.herokuapp.com/
+
 **/--------------------------------------------/ AUTH ROUTES /-----------------------------------/**
 
 **Register a User**
