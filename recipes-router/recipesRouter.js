@@ -46,7 +46,7 @@ router.put("/:id", restrict(), (req, res) => {
         res.status(200).json({ message: `Recipe is updated!`})
     })
     .catch(err => {
-        res.status(500).json({ message: "Failed to add the recipe" });
+        res.status(500).json({ message: "Failed to update the recipe" });
     })
 })
 
@@ -56,7 +56,7 @@ router.delete("/:id", restrict(), (req, res) => {
         res.status(200).json({ message: `Recipe is deleted!`})
     })
     .catch(err => {
-        res.status(500).json({ message: "Failed to add the recipe" });
+        res.status(500).json({ message: "Failed to delete the recipe" });
     })
 })
 
