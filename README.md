@@ -299,6 +299,8 @@ Body was empty
     message: "Failed to add the recipe",
 }
 
+```
+
 **/----------------------------------------/**
 
 ### **Modify a Single Recipe**
@@ -330,6 +332,7 @@ Any of the following
     "category": "Veggies",
   "photo": "https://fruitsandveggies.org/wp-content/uploads/2019/10/leslie-Pumpkin-Overnight-Oats-sized-for-banner-1440x480.jpg"
 }
+
 ```
 
 #### Response
@@ -348,6 +351,7 @@ Any of the following
   "category": "Veggies",
   "photo": "https://fruitsandveggies.org/wp-content/uploads/2019/10/leslie-Pumpkin-Overnight-Oats-sized-for-banner-1440x480.jpg"
 }
+
 ```
 
 ##### 401 (UnAuthorized)
@@ -356,6 +360,7 @@ Any of the following
   {
     message: "shall not pass!"
   }
+
 ```
 
 ##### 400 (Bad Request) 
@@ -365,15 +370,16 @@ Body was empty
   {
     message: "Please provide title, instructions, ingredients and photo for the post."
   }
-```
-```
 
+```
 ##### 500 (Bad Request)
 
 ```
 {
     message: "Failed to update the recipe",
 }
+
+```
 
 **/----------------------------------------/**
 
@@ -394,6 +400,7 @@ _http method_: **[DELETE]**
 {
     message: "Recipe is deleted!
 }
+
 ```
 
 ##### 500 (Bad Request)
@@ -402,3 +409,5 @@ _http method_: **[DELETE]**
 {
     message: "Failed to delete the recipe",
 }
+
+```
