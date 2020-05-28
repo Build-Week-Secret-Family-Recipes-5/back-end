@@ -1,10 +1,7 @@
 
-exports.seed = function(knex) {
-    return knex("recipes").truncate()
-    .then(function () {
-      return knex("recipes").insert([
+exports.seed = async function(knex) {
+      await knex("recipes").insert([
         {title: "Beet Hummus", ingredients: "2, 15 oz. cans of chickpeas / 1, 15 oz. can cut or whole beets, drained (about 8.5 oz) / ½ Cup fresh lemon juice (about 2 ½ lemons) / 2 small garlic cloves, minced / 3 Tbsp. tahini paste / Salt, to taste / Olive oil, to drizzle / Cumin, to garnish", instructions: "1 - Strain one can of chickpeas and set aside. 2 - Combine half of the first can of drained chickpeas with the whole second can, and warm in their liquid in a small saucepan. Once they come to a gentle simmer, strain out the chickpea juice and blend in a food processor while still warm into a fine purée. 3 - Add in the beets and continue to blend until smooth. 4 - Next, add the tahini, followed by the garlic, lemon juice, and salt. Pulse again until combined. Taste and season with more salt if needed. 5 - Serve garnished with the rest of the chickpeas, a drizzle of olive oil, and a sprinkle of cumin if desired.", source: "fruitsandveggies.org", category: "Veggies", photo: "https://fruitsandveggies.org/wp-content/uploads/2018/12/beet-hummus-thumb-800x267.jpg" },
         {title: "Quinoa Salad with Corn and Peas", ingredients: "1 cup uncooked quinoa / 2 cups water / 1 can (15 oz.) Libby’s® Whole Kernel Sweet Corn, drained / 1 can (15 oz.) Libby’s® Sweet Peas, drained / 1⁄2 cup diced red onion / 2 large tomatoes, seeded and diced / 4 oz. fresh mozzarella, diced / 1⁄8 cup chopped fresh parsley / 1 Tbsp lemon juice / 2 Tbsp olive oil", instructions: "Add quinoa and water to medium pot and bring it to a boil. Cover, then reduce heat to simmer and cook 15 minutes. Remove from heat and let sit covered for 5 minutes. Place into large bowl and fluff with fork. Let cool. ThenAdd corn, peas, onions, tomato, cheese, parsley, lime juice and olive oil. Gently toss mixture until combined.",source: "fruitsandveggies.org", category: "Veggies", photo: "https://fruitsandveggies.org/wp-content/uploads/2019/02/Quinoa%20Salad%20with%20Libbys%20Corn%20and%20Peas%20small-277x218.jpg"}
       ])
-    })
 };

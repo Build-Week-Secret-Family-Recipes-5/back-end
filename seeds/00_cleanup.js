@@ -1,6 +1,6 @@
-exports.seed = async function(knex) {
-    if (process.env.NODE_ENV != "production") {
-      await knex("users").truncate();
-      await knex("recipes").truncate();
-    }
-  };
+const knexCleaner = require("knex-cleaner");
+exports.seed = function(knex) {
+  return knexCleaner.clean(knex, {
+    ignoreTables: ["knex_migrations", "knex_migrations_lock"]
+  });
+};
