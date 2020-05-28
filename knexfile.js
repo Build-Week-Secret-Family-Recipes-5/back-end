@@ -15,6 +15,18 @@ module.exports = {
     },
   },
   production: {
+    client: 'pg',
+    connection: process.env.DATABASE_URL,
+
+    // this is needed when using foreign keys
+    pool: {
+      afterCreate: (conn, done) => {
+        // runs after a connection is made to the sqlite engine
+        conn.run("PRAGMA foreign_keys = ON", done) // turn on FK enforcement
+      },
+    },
+  },
+  testing: {
     client: 'sqlite3',
     useNullAsDefault: true, // needed for sqlite
     connection: {
