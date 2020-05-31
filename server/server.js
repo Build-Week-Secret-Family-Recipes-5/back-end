@@ -2,9 +2,11 @@ const express = require('express');
 const cookieParser =require("cookie-parser")
 const authRouter = require("../auth-routers/authRouter")
 const recipesRouter = require("../recipes-router/recipesRouter")
+const cors = require("cors")
 
 const server = express();
 
+server.use(cors());
 server.use(express.json());
 server.use(cookieParser())
 
