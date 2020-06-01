@@ -11,18 +11,19 @@ afterAll(async () => {
 describe("testing the register and login endpoints", () => {
     test("testing the register endpoint", async() => {
         const endpoint = "/api/auth/register"
-        const data = { username: "samim2020", email: "samim2020@gmail.com", password: "samim2020" }
+        const data = { username: "fnumilat", email: "fnumilat@gmail.com", password: "fnumilat22"}
 
         const res = await supertest(server).post(endpoint).send(data)
 
         expect(res.statusCode).toBe(409)
+        // expect(res.statusCode).toBe(201)
         expect(res.type).toBe("application/json")
         expect(res.body.message).toBe("User is already taken!")
     })
 
     test("testing the login endpoint", async() => {
         const endpoint = "/api/auth/login"
-        const data = { username: "samim2021", password: "samim2021" }
+        const data = { username: "fnumilat2", password: "fnumilat23" }
 
         const res = await supertest(server).post(endpoint).send(data)
 
